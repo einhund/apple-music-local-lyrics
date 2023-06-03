@@ -4,6 +4,8 @@ Fetch lyrics and description from Apple Music and Genius for iPod.
 
 Tested on `macOS Monterey 12.6.5` & `Music 1.2.5.7`.
 
+![demo](/demo.jpg)
+
 ## Usage
 
 ### Prerequisites
