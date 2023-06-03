@@ -1,8 +1,12 @@
 const app = Application("Music");
 const process = Application("System Events").processes["Music"];
-const selectedTracks = app.selection();
+let selectedTracks = app.selection();
 
 console.log(`Selected ${selectedTracks.length} tracks.`);
+if (selectedTracks.length === 0) {
+  selectedTracks = app.sources["library"].playlists["Library"].tracks();
+  console.log(`No tracks selected. Processing whole library.`);
+}
 
 let skipped = 0;
 let added = 0;
@@ -23,7 +27,7 @@ selectedTracks.forEach(track => {
   }
   const tabButtons = info.radioGroups.radioButtons;
   if (!tabButtons.name()[0].includes("Lyrics")) {
-    // this is a booklet
+    // this is a booklet (or iTunes LP)
     console.log(`${track.albumArtist()} - ${track.album()} - ${track.name()}: Booklet, skipping...`);
     booklet++;
   } else {
