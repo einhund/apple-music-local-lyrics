@@ -44,6 +44,12 @@ function logItemForTrack(track) {
 }
 
 function processTrack(track) {
+  if (["HLS media"].includes(track.kind())) {
+    // will encounter permission error for protected content
+    console.log(`${logItemForTrack(track)}: Protected content, skipping...`);
+    unavailable++;
+    return;
+  }
   if (["PDF document", "iTunes LP"].includes(track.kind())) {
     console.log(`${logItemForTrack(track)}: Booklet (or iTunes LP), skipping...`);
     booklet++;
