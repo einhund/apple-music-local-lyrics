@@ -77,7 +77,7 @@ function processTrackWithAppleMusic(track, shouldSkipLyrics) {
   track.lyrics = "";
 
   track.reveal(); // select() doesn't work for some unknown reason
-  process.menuBars[0].menus["Song"].menuItems["Info…"].click(); // open info window
+  process.menuBars[0].menus["Song"].menuItems["Info‚Ä¶"].click(); // open info window
   const windows = process.windows;
   let info;
   if (windows.name().includes("Song Info")) {
