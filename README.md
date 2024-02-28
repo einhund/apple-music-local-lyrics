@@ -4,6 +4,16 @@ Fetch lyrics and description from Apple Music and Genius for iPod.
 
 Tested on `macOS Monterey 12.6.5` & `Music 1.2.5.7`.
 
+For newer versions: Apple removed lyrics viewer from newer versions of Music app, where lyrics tab is missing from song info. Genius is the only available source. Change the following line to make the script work with Genius only:
+
+```
+const sources = [ "genius" ];
+```
+
+Also, lyrics added will NOT be visible anywhere on the new Music app, but the metadata will be added and lyrics will be shown on iPods.
+
+You're welcome to [file a report to Apple](https://www.apple.com/feedback/apple-music.html) encouraging them to add this feature back. Your effort will be appreciated.
+
 ![demo](/demo.jpg)
 
 ## Usage
